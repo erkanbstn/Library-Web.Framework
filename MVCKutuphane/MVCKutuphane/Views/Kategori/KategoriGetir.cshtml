@@ -1,0 +1,26 @@
+﻿@model MVCKutuphane.Models.Entity.Kategoriler
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+<h2>Kategori Güncelle</h2>
+<br />
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+            {
+<div class="form-group">
+    @Html.LabelFor(k => k.ID)
+    <br />
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Kategori)
+    <br />
+    @Html.TextBoxFor(k => k.Kategori, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Kategori, "", new { @style = "color : red" })
+    <br />
+</div>
+<div>
+    <button class="btn btn-primary">Kategori Güncelle</button>
+</div>
+            }
+

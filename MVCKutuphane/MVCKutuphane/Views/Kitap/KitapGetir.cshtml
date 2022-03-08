@@ -1,0 +1,51 @@
+﻿@model MVCKutuphane.Models.Entity.Kitaplar 
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+
+<h2>Personel Güncelle</h2>
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+
+<div class="form-group">
+    @Html.LabelFor(k => k.ID)
+    <br />
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Kitap)
+    <br />
+    @Html.TextBoxFor(k => k.Kitap, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Kitap, "", new { @style = "color : red" })
+    <br />
+    @Html.LabelFor(k => k.Kategori)
+    <br />
+    @Html.DropDownListFor(y => y.Kategoriler.ID, (List<SelectListItem>)ViewBag.dgr, "Kategori Seçiniz..", new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Yazar)
+    <br />
+    @Html.DropDownListFor(y => y.Yazarlar.ID, (List<SelectListItem>)ViewBag.dgr2, "Yazar Seçiniz..", new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Basim)
+    <br />
+    @Html.TextBoxFor(k => k.Basim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.YayinEvi)
+    <br />
+    @Html.TextBoxFor(k => k.YayinEvi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Sayfa)
+    <br />
+    @Html.TextBoxFor(k => k.Sayfa, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Durum)
+    <br />
+    @Html.TextBoxFor(k => k.Durum, new { @class = "form-control" })
+    <br />
+</div>
+    <div>
+        <button class="btn btn-primary">Kitap Güncelle</button>
+    </div>
+}
+

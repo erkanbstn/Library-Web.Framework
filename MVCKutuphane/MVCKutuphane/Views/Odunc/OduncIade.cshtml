@@ -1,0 +1,45 @@
+﻿@model MVCKutuphane.Models.Entity.Hareketler
+
+@{
+    ViewBag.Title = "OduncIade";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+<h2>Ödünç İade</h2>
+@using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
+{
+
+<div class="form-group">
+    @Html.LabelFor(k => k.ID)
+    <br />
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Kitap)
+    <br />
+    @Html.TextBoxFor(k => k.Kitaplar.Kitap, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Uye)
+    <br />
+    @Html.TextBoxFor(k => k.Uyeler.Uye, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Personel)
+    <br />
+    @Html.TextBoxFor(k => k.Personeller.Personel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.AlisTarih)
+    <br />
+    @Html.TextBoxFor(k => k.AlisTarih, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.IadeTarih)
+    <br />
+    @Html.TextBoxFor(k => k.IadeTarih, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>Üyenin Getirdiği Tarih</label>
+    <input type="text" class="form-control" name="UyeGetirdigiTarih" value="@DateTime.Now.ToShortDateString()"></input>
+    <br />
+</div>
+    <div>
+        <button class="btn btn-primary">Geri Al</button>
+    </div>
+}
+

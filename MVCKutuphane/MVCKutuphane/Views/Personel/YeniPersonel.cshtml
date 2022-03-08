@@ -1,0 +1,19 @@
+﻿@model MVCKutuphane.Models.Entity.Personeller
+@{
+    ViewBag.Title = "YeniPersonel";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+
+<form method="post">
+    <h2>Yeni Personel</h2>
+    <br />
+    <label>Personel</label>
+    <input class="form-control" name="Personel" type="text" />
+    <br />
+    @Html.ValidationMessageFor(x => x.Personel, "", new { @style = "color : red" })
+    <br />
+    <br />
+    <button class="btn btn-success">Kategori Kaydet</button>
+</form>
+

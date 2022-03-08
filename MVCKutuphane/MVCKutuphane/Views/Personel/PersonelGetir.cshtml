@@ -1,0 +1,25 @@
+﻿@model MVCKutuphane.Models.Entity.Personeller
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+<h2>Personel Güncelle</h2>
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        <br />
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.Personel)
+        <br />
+        @Html.TextBoxFor(k => k.Personel, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Personel, "", new { @style = "color : red" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-primary">Personel Güncelle</button>
+    </div>
+}

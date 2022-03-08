@@ -1,0 +1,64 @@
+﻿@model MVCKutuphane.Models.Entity.Uyeler
+@{
+    ViewBag.Title = "YeniUye";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+
+<form method="post">
+    <h2>Yeni Üye</h2>
+    <div> </div>
+    <div style="margin-top:15px">
+        <label>
+            Üye Adı
+        </label>
+        @Html.TextBoxFor(y => y.Uye, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Uye, "", new { @style = "color : red" })
+    </div>
+    <div style="margin-top:15px">
+        <label>
+            Mail
+        </label>
+        @Html.TextBoxFor(y => y.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Kullanıcı
+        </label>
+        @Html.TextBoxFor(y => y.Kullanici, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Kullanici, "", new { @style = "color : red" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Şifre
+        </label>
+        @Html.TextBoxFor(y => y.Sifre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sifre, "", new { @style = "color : red" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Fotoğraf
+        </label>
+        @Html.TextBoxFor(y => y.Fotograf, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Telefon
+        </label>
+        @Html.TextBoxFor(y => y.Telefon, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Okul
+        </label>
+        @Html.TextBoxFor(y => y.Okul, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-primary">Yeni Üye Ekle</button>
+</form>
+

@@ -1,0 +1,46 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<Hareketler>
+@{
+    ViewBag.Title = "UyeGecmis";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+
+<h2>Üyeler Geçmiş</h2>
+<h3>Üye : @ViewBag.uye</h3>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>
+            Kitap
+        </th>
+        <th>
+            Personel
+        </th>
+        <th>
+            Alış Tarih
+        </th>
+        <th>
+            İade Tarih
+        </th>
+    </tr>
+    @foreach (var uye in Model)
+    {
+        <tr>
+            <td>
+                @uye.Kitaplar.Kitap
+            </td>
+            <td>
+                @uye.Personeller.Personel
+            </td>
+            <td>
+                @Convert.ToDateTime(uye.AlisTarih).ToString("dd/MM/yy")
+            </td>
+            <td>
+                @Convert.ToDateTime(uye.IadeTarih).ToString("dd/MM/yy")
+            </td>
+        </tr>
+    }
+</table>
+

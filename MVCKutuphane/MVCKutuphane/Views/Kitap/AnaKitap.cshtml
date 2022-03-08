@@ -1,0 +1,60 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<Kitaplar>
+@{
+    ViewBag.Title = "AnaKitap";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+
+<h2>Kitaplar</h2>
+<br />
+@using (Html.BeginForm("AnaKitap", "Kitap", FormMethod.Get))
+{
+    <p>
+        Kitap Adı :  @Html.TextBox("x")
+        <input type="submit" value="Ara" class="btn btn-primary" />
+    </p>
+}
+
+
+
+
+<table class="table table-hover">
+    <tr><th>ID</th><th>Kitap</th><th>Kategori</th><th>Yazar</th><th>Basım</th><th>Yayınevi</th><th>Sayfa</th><th>Durum</th><th>İşlemler</th></tr>
+    @foreach (var ktp in Model)
+    {
+        <tr>
+            <td>
+                @ktp.ID
+            </td>
+            <td>
+                @ktp.Kitap
+            </td>
+            <td>
+                @ktp.Kategoriler.Kategori
+            </td>
+            <td>
+                @ktp.Yazarlar.Yazar
+            </td>
+            <td>
+                @ktp.Basim
+            </td>
+            <td>
+                @ktp.YayinEvi
+            </td>
+            <td>
+                @ktp.Sayfa
+            </td>
+            <td>
+                @ktp.Durum
+            </td>
+            <td>
+                @Html.ActionLink("Sil", "KitapSil", new { ID = ktp.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })
+                <a href="~/Kitap/KitapGetir/@ktp.ID" class="btn btn-primary">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Kitap/YeniKitap" class="btn btn-primary">Yeni Kitap Ekle</a>
+
+

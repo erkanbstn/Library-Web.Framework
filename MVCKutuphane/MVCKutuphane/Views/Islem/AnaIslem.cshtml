@@ -1,0 +1,37 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<Hareketler>
+@{
+    ViewBag.Title = "AnaIslem";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+<table class="table table-hover">
+    <tr><th>İşlem ID</th><th>Kitap</th><th>Üye</th><th>Personel</th><th>Alış Tarihi</th><th>İade Tarihi</th><th>İşlemler</th></tr>
+    @foreach (var ktp in Model)
+    {
+        <tr>
+            <td>
+                @ktp.ID
+            </td>
+            <td>
+                @ktp.Kitaplar.Kitap
+            </td>
+            <td>
+                @ktp.Uyeler.Uye
+            </td>
+            <td>
+                @ktp.Personeller.Personel
+            </td>
+            <td>
+                @Convert.ToDateTime(ktp.AlisTarih).ToString("dd/MM/yy")
+            </td>
+            <td>
+                @Convert.ToDateTime(ktp.IadeTarih).ToString("dd/MM/yy")
+            </td>
+            <td>
+                <a href="~/Odunc/OduncIade/@ktp.ID" class="btn btn-primary">İade Al</a>
+            </td>
+        </tr>
+    }
+</table>
+

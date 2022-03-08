@@ -1,0 +1,26 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<Kitaplar>
+@{
+    ViewBag.Title = "YazarKitaplar";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+<h2>Yazar Kitaplar</h2>
+<h3>Yazar : @ViewBag.yzr</h3>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Kitap</th>
+        <th>Kategori</th>
+        <th>YayınEvi</th>
+    </tr>
+    @foreach (var yzr in Model)
+    {
+        <tr>
+            <td>@yzr.Kitap</td>
+            <td>@yzr.Kategoriler.Kategori</td>
+            <td>@yzr.YayinEvi</td>
+        </tr>
+    }
+</table>
+

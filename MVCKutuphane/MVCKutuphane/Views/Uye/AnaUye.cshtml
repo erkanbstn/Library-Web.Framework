@@ -1,0 +1,63 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<Uyeler>
+@{
+    ViewBag.Title = "AnaUye";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+
+<h2>Üyeler</h2>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            UYE
+        </th>
+        <th>
+            MAİL
+        </th>
+        <th>
+            FOTOGRAF
+        </th>
+        <th>
+            OKUL
+        </th>
+        <th>
+            Kitap Geçmişi
+        </th>
+        <th>
+            İŞLEMLER
+        </th>
+    </tr>
+    @foreach (var uye in Model)
+    {
+        <tr>
+            <td>
+                @uye.ID
+            </td>
+            <td>
+                @uye.Uye
+            </td>
+            <td>
+                @uye.Mail
+            </td>
+            <td>
+                @uye.Fotograf
+            </td>
+            <td>
+                @uye.Okul
+            </td>
+            <td>
+                <a href="~/Uye/UyeGecmis/@uye.ID" class="btn btn-warning ">Kitap Geçmişi</a>
+            </td>
+            <td>
+                @Html.ActionLink("Sil", "UyeSil", new { ID = uye.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })
+                <a href="~/Uye/UyeGetir/@uye.ID" class="btn btn-primary">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Uye/YeniUye" class="btn btn-primary">Yeni Üye Ekle</a>

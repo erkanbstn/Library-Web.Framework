@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCKutuphane", "MVCKutuphane\MVCKutuphane.csproj", "{B74F7863-072A-4CDB-8594-8159D7683E47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B74F7863-072A-4CDB-8594-8159D7683E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74F7863-072A-4CDB-8594-8159D7683E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B74F7863-072A-4CDB-8594-8159D7683E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74F7863-072A-4CDB-8594-8159D7683E47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27A902CD-AB57-45A1-AF4C-3E9649A90137}
+	EndGlobalSection
+EndGlobal

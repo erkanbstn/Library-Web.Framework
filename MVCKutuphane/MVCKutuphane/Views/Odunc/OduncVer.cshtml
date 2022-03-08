@@ -1,0 +1,50 @@
+﻿@model MVCKutuphane.Models.Entity.Hareketler
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+ 
+<form method="post">
+    <h2>Yeni Ödünç Kitap</h2>
+    <div> </div>
+    <div style="margin-top:15px">
+        <label>
+            Üye
+        </label>
+        @Html.DropDownListFor(y => y.Uyeler.ID, (List<SelectListItem>)ViewBag.dgr, "Üye Seçiniz..", new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>
+            Kitap 
+        </label>
+        @Html.DropDownListFor(y => y.Kitaplar.ID, (List<SelectListItem>)ViewBag.kitap, "Kitap Seçiniz..", new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Personel
+        </label>
+        @Html.DropDownListFor(y => y.Personeller.ID, (List<SelectListItem>)ViewBag.personel, "Personel Seçiniz..", new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Kitap Alış Tarihi
+        </label>
+        <input name="AlisTarih" value="@DateTime.Now.ToShortDateString()" class="form-control" />
+    </div>
+    <br />
+    <div style="margin-top:15px">
+        <label>
+            Kitap İade Tarihi
+        </label>
+        <input name="AlisTarih" value="@DateTime.Now.AddDays(7).ToShortDateString()" class="form-control" />
+    </div>
+    <br />
+    <br />
+    <button class="btn btn-group" style="background-color:#ad13c9; color:white">Yeni Kitap Ödünç Ver</button>
+    <input type="hidden" name="IslemDurum" value="false" />
+</form>
+
+

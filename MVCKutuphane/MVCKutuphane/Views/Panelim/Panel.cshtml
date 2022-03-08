@@ -1,0 +1,41 @@
+﻿@model MVCKutuphane.Models.Entity.Uyeler
+@{
+    ViewBag.Title = "Panel";
+    Layout = "~/Views/Shared/_Panel.cshtml";
+}
+
+<br />
+<h2>Üye Profil Bilgileri</h2>
+<br />
+@using (Html.BeginForm("Panel", "Panelim", FormMethod.Post))
+{
+
+    <table class="table table-hover">
+        <tr>
+            <th>ID : @Session["ID"] </th>
+        </tr>
+        <tr>
+            <th>Mail Adresi :  @HttpContext.Current.User.Identity.Name</th>
+        </tr>
+        <tr>
+            <th>Ad : @Html.TextBoxFor(v => v.Uye, new { @class = "form-control" }) </th>
+        </tr>
+        <tr>
+            <th>Kullanıcı : @Html.TextBoxFor(v => v.Kullanici, new { @class = "form-control" }) </th>
+        </tr>
+        <tr>
+            <th>Şifre :<br /> @Html.TextBoxFor(v => v.Sifre, new { @class = "form-control" })
+        </tr>
+        <tr>
+            <th>Okul : @Html.TextBoxFor(v => v.Okul, new { @class = "form-control" })</th>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-danger">
+                    Şifre Güncelle
+                </button>
+            </td>
+        </tr>
+    </table>
+}
+

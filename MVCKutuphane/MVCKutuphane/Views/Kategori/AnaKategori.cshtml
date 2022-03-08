@@ -1,0 +1,18 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<Kategoriler>
+@{
+    ViewBag.Title = "AnaKategori";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+<h2>Kategoriler</h2>
+<br />
+<table class="table table-hover">
+    <tr><th>ID</th><th>Kategori</th><th>İşlemler</th></tr>
+    @foreach (var ktg in Model)
+    {
+        <tr><td>@ktg.ID</td><td>@ktg.Kategori</td><td><a href="~/Kategori/KategoriSil/@ktg.ID" class="btn btn-danger">Sil</a> <a href="~/Kategori/KategoriGetir/@ktg.ID" class="btn btn-primary">Güncelle</a></td></tr>
+    }
+</table>
+<a href="/Kategori/YeniKategori" class="btn btn-primary">Yeni Kategori Ekle</a>
+

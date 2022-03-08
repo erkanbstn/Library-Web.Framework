@@ -1,0 +1,23 @@
+﻿@model MVCKutuphane.Models.Entity.Yazarlar
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/_AnaBar.cshtml";
+}
+
+@using (Html.BeginForm("YazarGuncelle", "Yazar", FormMethod.Post))
+{
+    <h2>Yazar Güncelle</h2>
+    <div class="form-group">
+        <label>Yazar ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+        <br />
+        <label>Yazar </label>
+        @Html.TextBoxFor(x => x.Yazar, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Yazar, "", new { @style = "color : red" })
+        <br />
+        <label>Yazar Detay</label>
+        @Html.TextBoxFor(x => x.Detay, new { @class = "form-control" })
+        <br />
+    </div>
+    <button class="btn btn-primary">Kategori Güncelle</button>
+}
